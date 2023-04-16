@@ -1,0 +1,9 @@
+.ilha-container{
+    background-color: rgb(121, 121, 141);
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    list-style-type: none;
+    margin-left: auto;
+    margin-right: auto;
+}
