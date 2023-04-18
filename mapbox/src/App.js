@@ -66,6 +66,7 @@ function App() {
 
     const [listaIlhas,setlistaIlhas] = useState([])
     const [id,setId]=useState(0)
+    const [control,setcontrol]=useState(false)
 
     console.log(infos[id].long)
     console.log(infos[id].lat)
@@ -86,16 +87,31 @@ function App() {
       console.log(ilhasProcessadas)
     
     }
+    if(!control){
+      console.log(infos[1].lat)
+    
+      const ilhasProcessadas = infos.map((dados)=>{
+        return{
+          id:dados.id,
+          nome:dados.nome,
+          ilha:dados.ilha
+        }
+      })
+      setlistaIlhas(ilhasProcessadas)
+      console.log(ilhasProcessadas)
+      setcontrol(true)
+    }
     
     
     
-
+//<ListaIlhas lista={listaIlhas} funcao={setId}/>
   return (
-    <div className="App"><div>
-        <Maping longitude={infos[id].long} latitude={infos[id].lat}></Maping>
+    <div className="App">
         
-        <button onClick={changehandler}>Localizar</button></div>
-        <ListaIlhas lista={listaIlhas} funcao={setId}/>
+      <ListaIlhas lista={listaIlhas} funcao={setId}/>
+      <Maping longitude={infos[id].long} latitude={infos[id].lat}></Maping>
+      
+    
         
     </div>
   );

@@ -9,8 +9,8 @@ const Ilha = (props)=>{
     }
     return(
         <li className="ilha-container" onClick={teste}>
-            <h3 className="nome-ilha" >{props.nome}</h3>
-            <p>{props.ilha}</p>
+            <h3 className="nome-porto" >{props.nome}</h3>
+            <p className="nome-ilha">{props.ilha}</p>
         </li>
     );
 }
